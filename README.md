@@ -1,4 +1,4 @@
 # portfolio-site
 My personal Portfolio Site
 
-Download Portfolio site and open index.html
+Download 'Portfolio Site' and open 'index.html'
