@@ -35,18 +35,17 @@ html, body {
 
 .header h1 {
   text-align: center;
-  font-family: "Goudy Old Style";
+  font-family: 'Crimson Text', serif;
   color: rgb(255, 255, 255);
-  font-size: 9vw;
+  font-size: 8vw;
   margin-top: 4%;
 }
 
 .header p {
   text-align: center;
-  font-family: "Goudy Old Style";
+  font-family: 'Crimson Text', serif;
   color: rgb(255, 255, 255, 0.8);
-  font-size: 5vw;
-  font-weight: 800;
+  font-size: 4vw;
   margin-top: -2%;
 }
 
@@ -54,7 +53,8 @@ html, body {
 
 .about-me {
   height: auto;
-  background-color: rgb(94, 94, 94);
+  background: url(img/greytex.png) no-repeat;
+  background-size: cover;
 }
 
 .about-me img {
@@ -109,7 +109,7 @@ i:hover:not(.active) {
   right: 0;
   width: 100%;
   opacity: 0;
-  transition: 0.5s ease;
+  transition: 0.8s ease;
   background-color: rgb(67, 77, 87);
 }
 
@@ -119,7 +119,8 @@ i:hover:not(.active) {
 
 .text {
   color: white;
-  font-size: 9vw;
+  font-size: 16px;
+  width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -132,7 +133,8 @@ i:hover:not(.active) {
 .contact {
   height: auto;
   text-align: center;
-  background-color: rgb(94, 94, 94);
+  background: url(img/greytex.png) no-repeat;
+  background-size: cover;
 }
 
 .contact p {
