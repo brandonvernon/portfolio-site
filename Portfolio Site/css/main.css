@@ -1,198 +1,145 @@
-  * {
-    box-sizing: border-box;
-  }
+html, body {
+  width: 100%;
+}
 
-  body, html {
-    height: 100%;
-  }
+.container-fluid {
+  padding-right: 0px;
+  padding-left: 0px;
+}
 
-  body {
-    font-family: Candara;
-    margin: 0;
-    line-height: 1.6;
-  }
+#mainRow {
+  height: 100%;
+}
 
-  .body {
-    display: flex;
-    flex-wrap: wrap;
-  }
+.row {
+  margin: 0;
+}
 
-  .body header, section {
-    width: 100%;
-    text-align: center;
-  }
+#mainCol {
+  height: 100%;
+}
 
-  /*Header*/
+.col {
+  padding: 0;
+}
 
-  header {
-    font-family: "Goudy Old Style";
-    background: url(img/sculpture_falls.jpg) no-repeat top center;
-    height: 50%;
-    background-size: cover;
-    background-attachment: local;
-  }
+/*Header Section*/
 
-  header h1 {
-    font-size: 9vw;
-    color: white;
-    margin-top: 8px;
-    margin-bottom: 0px;
-  }
+.header {
+  height: 50vh;
+  width: auto;
+  background: url(img/sculpture_falls.jpg) no-repeat;
+  background-size: cover;
+  background-attachment: local;
+}
 
-  header p {
-    font-size: 5vw;
-    font-weight: 800;
-    color: white;
-    margin-top: -10px;
-  }
+.header h1 {
+  text-align: center;
+  font-family: "Goudy Old Style";
+  color: rgb(255, 255, 255);
+  font-size: 9vw;
+  margin-top: 4%;
+}
 
-  /*About Me Section*/
+.header p {
+  text-align: center;
+  font-family: "Goudy Old Style";
+  color: rgb(255, 255, 255, 0.8);
+  font-size: 5vw;
+  font-weight: 800;
+  margin-top: -2%;
+}
 
-  .about-me {
-    height: 75%;
-    background-color: rgb(94, 94, 94);
-  }
+/*About Me Section*/
 
-  .about-me img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 16px;
-    border: 1px solid white;
-    border-radius: 4vw;
-    padding: 1vw;
-    width: 30vw;
-  }
+.about-me {
+  height: auto;
+  background-color: rgb(94, 94, 94);
+}
 
-  .about-me h2 {
-    font-size: 5vw;
-    color: white;
-    text-align: center;
-    margin-top: 8px;
-    margin-bottom: 0px;
-  }
+.about-me img {
+  float: left;
+  margin-top: 4%;
+  margin-left: 4%;
+  margin-right: 4%;
+  border-radius: 50%;
+  width: 33.3333%;
+}
 
-  .about-me hr {
-    max-width: 20vw;
-    border-width: 1px;
-    opacity: 0.5;
-    border-color: white;
-    margin-top: 0px;
-  }
+.about-me p {
+  font-size: 16px;
+  color: white;
+  margin-top: 4%;
+  margin-left: 4%;
+  margin-right: 4%;
+}
 
-  .about-me p {
-    font-size: 16px;
-    color: white;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
+/*Website Icons*/
 
-  /*Website Icons*/
+.about-me a {
+  font-size: 15vw;
+  margin-left: 10vw;
+}
 
-  .about-me a {
-    font-size: 10vw;
-    padding: 10vw;
-  }
+i {
+  display: block;
+  color: white;
+}
 
-  i {
-    display: block;
-    color: white;
-  }
+i:hover:not(.active) {
+  color: rgb(67, 77, 87);
+}
 
-  i:hover:not(.active) {
-    color: rgb(67, 77, 87);
-  }
+.active {
+  color: rgb(67, 77, 87);
+}
 
-  .active {
-    color: rgb(67, 77, 87);
-  }
+/*Portfolio*/
 
-  /*Portfolio*/
+.image {
+  width: 100%;
+  height: auto;
+}
 
-  .portfolio-section {
-    width: 200%;
-  }
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: rgb(67, 77, 87);
+}
 
-  .portfolio {
-    position: relative;
-    width: 50%;
-  }
+#project:hover .overlay {
+  opacity: 0.8;
+}
 
-  .image {
-    display: block;
-    width: 200%;
-    height: auto;
-  }
+.text {
+  color: white;
+  font-size: 9vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
 
-  .overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 200%;
-    opacity: 0;
-    transition: 0.5s ease;
-    background-color: rgb(67, 77, 87);
-  }
+/*Contact*/
 
-  .portfolio:hover .overlay {
-    opacity: 0.5;
-  }
+.contact {
+  height: auto;
+  text-align: center;
+  background-color: rgb(94, 94, 94);
+}
 
-  .text {
-    color: white;
-    font-size: 10vw;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
+.contact p {
+  color: white;
+  font-size: 16px;
+}
 
-  /*Contact*/
-
-  .contact {
-    height: 15%;
-  }
-
-  .contact h2 {
-    font-size: 5vw;
-    color: rgb(67, 77, 87);
-    text-align: center;
-    margin-top: 8px;
-    margin-bottom: 0px;
-  }
-
-  .contact hr {
-    max-width: 20vw;
-    border-width: 1px;
-    opacity: 0.5;
-    border-color: rgb(67, 77, 87);
-    margin-top: 0px;
-  }
-
-  .contact p {
-    font-size: 16px;
-    font-weight: 800;
-    color: rgb(67, 77, 87);
-    margin-top: 0px;
-  }
-
-  .contact a {
-    font-size: 10vw;
-  }
-
-  .contact i {
-    display: block;
-    color: rgb(67, 77, 87);
-  }
-
-  .contact i:hover:not(.active) {
-    color: rgb(94, 94, 94);
-  }
-
-  .active {
-    color: rgb(94, 94, 94);
-  }
+.contact a {
+  font-size: 15vw;
+}
