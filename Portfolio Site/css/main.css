@@ -44,6 +44,7 @@ html, body {
 .header p {
   text-align: center;
   font-family: 'Crimson Text', serif;
+  color: rgb(255, 255, 255);
   color: rgb(255, 255, 255, 0.8);
   font-size: 4vw;
   margin-top: -2%;
@@ -53,8 +54,7 @@ html, body {
 
 .aboutMe {
   height: auto;
-  background: url(img/greytex.png) no-repeat;
-  background-size: cover;
+  background-color: rgb(94, 94, 94);
 }
 
 .aboutMe img {
@@ -133,8 +133,7 @@ i:hover:not(.active) {
 .contact {
   height: auto;
   text-align: center;
-  background: url(img/greytex.png) no-repeat;
-  background-size: cover;
+  background-color: rgb(94, 94, 94);
 }
 
 .contact p {
