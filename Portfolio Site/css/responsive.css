@@ -75,7 +75,8 @@
 
   #aboutMe .modal-content {
     width: 90%;
-    background-color: #00000000;
+    background-color: rgb(170, 175, 190);
+    background-color: rgba(170, 175, 190, 0.1);
     border: none;
     position: absolute;
     top: 50%;
@@ -178,7 +179,8 @@
 
   #contact .modal-content {
     width: 50%;
-    background-color: #00000000;
+    background-color: rgb(170, 175, 190);
+    background-color: rgba(170, 175, 190, 0.1);
     border: none;
     position: absolute;
     top: 50%;
