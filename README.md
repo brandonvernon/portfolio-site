@@ -2,6 +2,6 @@
 
 A responsive portfolio website built with Bootstrap, HTML, CSS, and Javascript
 
-view [here](http://www.brandonvernon.com)
+View [here](http://www.brandonvernon.com)
 
 
