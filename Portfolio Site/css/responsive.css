@@ -18,6 +18,8 @@
     float: left;
     padding-top: 4%;
     padding-left: 6%;
+    animation: fade;
+    animation-duration: 3s;
   }
 
   .navRight {
@@ -25,6 +27,8 @@
     float: right;
     padding-top: 4%;
     padding-right: 4%;
+    animation: fade;
+    animation-duration: 3s;
   }
 
   .header a:hover:not(.active) {
@@ -39,26 +43,37 @@
 
   /*Header Section*/
 
+  .clear {
+    display: none;
+  }
+
   .header {
     height: 100vh;
   }
 
+  h1 {
+    animation: fade;
+    animation-duration: 3s;
+  }
+
   .header p {
     font-size: 3vw;
+    animation: fade;
+    animation-duration: 3s;
   }
 
   /*About Me Section*/
 
-  .about-me {
+  .aboutMe {
     display: none;
   }
 
-  #about-me {
+  #aboutMe {
     animation: pulse;
     animation-duration: 0.8s;
   }
 
-  #about-me .modal-content {
+  #aboutMe .modal-content {
     width: 90%;
     background-color: #00000000;
     border: none;
@@ -69,14 +84,14 @@
 
   }
 
-  .about-meM {
+  .aboutMeModalSection {
     height: auto;
     text-align: left;
-    background: url(img/greytex.png) no-repeat;
+    background: #a0acbc80;
     background-size: cover;
   }
 
-  .about-meM img {
+  .aboutMeModalSection img {
     float: left;
     opacity: 0.95;
     padding-top: 2%;
@@ -87,7 +102,7 @@
     width: 20vw;
   }
 
-  .about-meM p {
+  .aboutMeModalSection p {
     font-size: 16px;
     color: white;
     padding-top: 2%;
@@ -129,6 +144,7 @@
   }
 
   #portfolio .text {
+    font-size: 1.2vw;
     padding-left: 2%;
     padding-right: 2%;
   }
@@ -170,31 +186,43 @@
     transform: translate(-50%, -50%);
   }
 
-  .contactM {
+  .contactModalSection {
     height: auto;
     text-align: center;
-    background: url(img/greytex.png) no-repeat;
+    background: #a0acbc80;
     background-size: cover;
   }
 
-  .contactM p {
+  .contactModalSection p {
     color: white;
     font-size: 20px;
     font-weight: 400;
     padding-top: 2%;
   }
 
-  .contactM a {
+  .contactModalSection a {
     font-size: 10vw;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    10% {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   @keyframes pulse {
     from {
       opacity: 0;
-      transform: scale3d(1, 1, 1);
+      transform: scale3d(0.95, 0.95, 0.95);
     }
-    50% {
-      transform: scale3d(1.05, 1.05, 1.05);
+    10% {
+      opacity: 0;
     }
     to {
       opacity: 1;

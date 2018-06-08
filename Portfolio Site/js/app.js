@@ -1,31 +1,46 @@
-// Modals
-let contact = document.getElementById('contact');
-let portfolio = document.getElementById('portfolio-section');
-let aboutMe = document.getElementById('about-me');
+let contact = document.querySelector('.navContact');
+let portfolio = document.querySelector('.navPortfolio');
+let aboutMe = document.querySelector('.navAboutMe');
 
-// Links to Modals
-let contactLink = document.getElementById("contactLink");
-let portfolioLink = document.getElementById("portfolioLink");
-let aboutMeLink = document.getElementById("aboutMeLink");
+let contactModal = document.querySelector('.contactModal');
+let portfolioModal = document.querySelector('.portfolioModal');
+let aboutMeModal = document.querySelector('.aboutMeModal');
 
-// Opens the Modals
-contactLink.onclick = function() {
-    contact.style.display = "block";
-}
-portfolioLink.onclick = function() {
-    portfolio.style.display = "block";
-}
-aboutMeLink.onclick = function() {
-    aboutMe.style.display = "block";
+let name = document.querySelector('.name');
+let role = document.querySelector('.role');
+
+
+function clear() {
+  contact.addEventListener("click", function(event) {
+    name.classList.add('clear');
+    role.classList.add('clear');
+    unclear();
+  })
+  portfolio.addEventListener("click", function(event) {
+    name.classList.add('clear');
+    role.classList.add('clear');
+    unclear();
+  })
+  aboutMe.addEventListener("click", function(event) {
+    name.classList.add('clear');
+    role.classList.add('clear');
+    unclear();
+  })
 }
 
-// Click anywhere outside of the modal to close
-window.onclick = function(event) {
-    if (event.target == contact || portfolio || aboutMe) {
-        contact.style.display = "none";
-        portfolio.style.display = "none";
-        aboutMe.style.display = "none";
-        let backdrop = document.querySelector('.modal-backdrop');
-        backdrop.parentNode.removeChild(backdrop);
-    }
+function unclear() {
+  contactModal.addEventListener("click", function(event) {
+      name.classList.remove('clear');
+      role.classList.remove('clear');
+  })
+  portfolioModal.addEventListener("click", function(event) {
+      name.classList.remove('clear');
+      role.classList.remove('clear');
+  })
+  aboutMeModal.addEventListener("click", function(event) {
+      name.classList.remove('clear');
+      role.classList.remove('clear');
+  })
 }
+
+clear();
