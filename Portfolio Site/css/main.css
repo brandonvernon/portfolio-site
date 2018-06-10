@@ -108,9 +108,9 @@ i:hover:not(.active) {
   left: 0;
   right: 0;
   width: 100%;
-  opacity: 0;
+  opacity: 1;
   transition: 0.8s ease;
-  background-color: rgb(67, 77, 87);
+  background-color: transparent;
 }
 
 #project:hover .overlay {
@@ -120,6 +120,7 @@ i:hover:not(.active) {
 .text {
   color: white;
   font-size: 16px;
+  text-shadow: 2px 2px 2px black;
   width: 100%;
   position: absolute;
   top: 50%;
@@ -142,5 +143,5 @@ i:hover:not(.active) {
 }
 
 .contact a {
-  font-size: 15vw;
+  font-size: 36px;
 }
