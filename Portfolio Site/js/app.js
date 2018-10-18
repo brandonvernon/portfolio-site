@@ -45,7 +45,7 @@ function check() {
 function noModals(){
   let width = window.innerWidth;
   console.log(width);
-  if (width <= "768"){
+  if (width <= "824"){
     header.classList.remove('hide');
     aboutMeModal.style.display = "none";
     portfolioModal.style.display = "none";
