@@ -1,176 +1,413 @@
 html, body{
+  font-family: 'Segoe UI', serif;
   margin: auto;
 }
 
-.container{
-  height: 100vh;
+.container-screen-lg{
+  height: 50vh;
   background: url(img/sculpture_falls.jpg) no-repeat;
   background-size: cover;
+
+  @media screen and (min-width: 768px){
+    height: 100vh;
+  }
+
+  .modal-overlay{
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgba(45, 53, 63, 0.5);
+  }
+
+  .aboutme-modal{
+    display: none;
+    position: fixed;
+    right: 0;
+    left: 0;
+    width: 90%;
+    height: auto;
+    z-index: 1050;
+    background-color: rgba(45, 53, 63, 0.5);
+    margin: auto;
+    animation: pulse;
+    animation-duration: 0.8s;
+
+    .aboutme-img{
+      float: left;
+      width: 33.33vw;
+      max-width: 300px;
+      margin: 30px;
+
+      img{
+        max-width: 100%;
+        max-height: 300px;
+        border-radius: 15%;
+        opacity: 0.8;
+      }
+    }
+
+    p{
+      font-size: 16px;
+      color: #ffffff;
+      padding: 30px 30px;
+      margin: 0;
+    }
+  }
+
+  .portfolio-modal{
+    display: none;
+    flex-flow: row wrap;
+    justify-content: center;
+    position: fixed;
+    top: 100px;
+    z-index: 1050;
+    margin: auto;
+    animation: pulse;
+    animation-duration: 0.8s;
+
+    .project{
+      display: flex;
+      position: relative;
+      margin: 10px;
+
+      .image{
+        width: 27.78vw;
+        min-width: 300px;
+        height: 13.33vw;
+        min-height: 144px;
+        transition: 0.8s ease;
+      }
+
+      .overlay{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        opacity: 0;
+        transition: 0.8s ease;
+        background-color: #303d4f;
+
+        &:hover{
+          opacity: 0.8;
+        }
+      }
+
+      .text{
+        color: #ffffff;
+        font-size: 1.6vw;
+        text-shadow: 2px 2px 2px #000000;
+        width: 90%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+
+        @media screen and (min-width: 768px){
+          font-size: 1.4vw;
+        }
+
+        @media screen and (min-width: 1024px){
+          font-size: 1.2vw;
+        }
+      }
+    }
+
+    .project:hover .image{
+      -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+      transform: scale(1.05);
+    }
+
+    .project:hover .overlay{
+      -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+      transform: scale(1.05);
+    }
+  }
+
+  .contact-modal{
+    display: none;
+    position: fixed;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    z-index: 1050;
+    text-align: center;
+    background-color: rgba(45, 53, 63, 0.5);
+    animation: pulse;
+    animation-duration: 0.8s;
+
+    p{
+      color: #ffffff;
+      font-size: 16px;
+      margin: 0;
+      padding: 15px 15px 30px;
+
+      .email-link {
+        color: #ffffff;
+        font-size: 16px !important;
+      }
+
+      a{
+        color: #ffffff;
+        font-size: 36px;
+        transition: 0.3s;
+
+        &:hover{
+          color: #303d4f;
+        }
+      }
+    }
+  }
 }
 
 .nav{
-  display: flex;
-  flex-flow: row nowrap;
+  display: none;
+
+  @media screen and (min-width: 768px){
+    display: flex;
+    flex-flow: row nowrap;
+  }
 
   .nav-social{
+    display: flex;
+    width: 50vw;
+    margin-left: 4vw;
 
+    a{
+      font-size: 24px;
+      color: #ffffff;
+      padding: 2vw;
+      animation: fade;
+      animation-duration: 3s;
+      transition: 0.3s;
+
+      &:hover{
+        color: rgb(67, 77, 87);
+      }
+    }
   }
 
   .nav-links{
-    
+    display: flex;
+    width: 50vw;
+    justify-content: flex-end;
+    margin-right: 4vw;
+
+    a{
+      color: #ffffff;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 2vw;
+      animation: fade;
+      animation-duration: 3s;
+      transition: 0.3s;
+
+      &:hover{
+        color: rgb(67, 77, 87);
+      }
+    }
   }
 }
 
-/*
-html, body {
-  width: 100%;
+.header-wrapper{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+
+  &.hide {
+    display: none;
+  }
+
+  .header{
+    margin: auto;
+
+    h1{
+      font-family: 'Crimson Text', serif;
+      font-size: 8vw;
+      font-weight: 100;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin: 3% auto 0;
+      animation: fade;
+      animation-duration: 3s;
+    }
+  }
+
+  .subheader{
+    margin: auto;
+
+    h2{
+      font-family: 'Crimson Text', serif;
+      font-size: 4vw;
+      font-weight: 100;
+      color: #ffffff;
+      margin: -2% auto 0;
+      animation: fade;
+      animation-duration: 3s;
+
+      @media screen and (min-width: 768px){
+        font-size: 3vw;
+        margin: -5% auto 0;
+      }
+    }
+  }
 }
 
-.container-fluid {
-  padding-right: 0px;
-  padding-left: 0px;
-}
-
-#mainRow {
-  height: 100%;
-}
-
-.row {
-  margin: 0;
-}
-
-#mainCol {
-  height: 100%;
-}
-
-.col {
-  padding: 0;
-}
-
-/*Header Section
-
-.header {
-  height: 50vh;
-  width: auto;
-  background: url(img/sculpture_falls.jpg) no-repeat;
-  background-size: cover;
-  background-attachment: local;
-}
-
-.header h1 {
-  text-align: center;
-  font-family: 'Crimson Text', serif;
-  color: rgb(255, 255, 255);
-  font-size: 8vw;
-  margin-top: 4%;
-}
-
-.header p {
-  text-align: center;
-  font-family: 'Crimson Text', serif;
-  color: rgb(255, 255, 255);
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 4vw;
-  margin-top: -2%;
-}
-
-/*About Me Section
-
-.aboutMe {
+.aboutme{
   height: auto;
-  background-color: rgb(94, 94, 94);
+  background-color: #303d4f;
+
+  @media screen and (min-width: 768px){
+    display: none;
+  }
+
+  .aboutme-img{
+    float: left;
+    width: 33.33vw;
+    margin: 15px;
+
+    img{
+      max-width: 100%;
+      max-height: 300px;
+      border-radius: 50%;
+    }
+  }
+
+  p{
+    font-size: 16px;
+    color: #ffffff;
+    padding: 15px 15px 30px;
+    margin: 0;
+  }
+
+  .social{
+    display: flex;
+    justify-content: center;
+    padding: 0 0 30px;
+
+    a{
+      font-size: 15vw;
+      color: #ffffff;
+      padding: 0 8vw 0;
+      animation: fade;
+      animation-duration: 3s;
+      transition: 0.3s;
+
+      &:hover{
+        color: rgb(67, 77, 87);
+      }
+    }
+  }
 }
 
-.aboutMe img {
-  float: left;
-  margin-top: 4%;
-  margin-left: 4%;
-  margin-right: 4%;
-  border-radius: 50%;
-  width: 33.3333%;
+.portfolio{
+  background-color: #303d4f;
+
+  @media screen and (min-width: 768px){
+    display: none;
+  }
+
+  .project{
+    display: flex;
+    position: relative;
+
+    .image{
+      width: 100%;
+      height: 100%;
+    }
+
+    .overlay{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      opacity: 0;
+      transition: 0.8s ease;
+      background-color: #303d4f;
+
+      &:hover{
+        opacity: 0.8;
+      }
+    }
+
+    .text{
+      color: #ffffff;
+      font-size: 16px;
+      text-shadow: 2px 2px 2px #000000;
+      width: 90%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+  }
 }
 
-.aboutMe p {
-  font-size: 16px;
-  color: white;
-  margin-top: 4%;
-  margin-left: 4%;
-  margin-right: 4%;
-}
-
-/*Website Icons
-
-.aboutMe a {
-  font-size: 15vw;
-  margin-left: 10vw;
-}
-
-i {
-  display: block;
-  color: white;
-}
-
-i:hover:not(.active) {
-  color: rgb(67, 77, 87);
-}
-
-.active {
-  color: rgb(67, 77, 87);
-}
-
-/*Portfolio
-
-.image {
-  width: 100%;
+.contact{
   height: auto;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  opacity: 1;
-  transition: 0.8s ease;
-  background-color: transparent;
-}
-
-#project:hover .overlay {
-  opacity: 0.8;
-}
-
-.text {
-  color: white;
-  font-size: 16px;
-  text-shadow: 2px 2px 2px black;
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   text-align: center;
+  background-color: #303d4f;
+
+  @media screen and (min-width: 768px){
+    display: none;
+  }
+
+  p{
+    color: #ffffff;
+    font-size: 16px;
+    margin: 0;
+    padding: 15px 15px 30px;
+
+    .email-link {
+      color: #ffffff;
+      font-size: 16px !important;
+    }
+
+    a{
+      color: #ffffff;
+      font-size: 36px;
+      transition: 0.3s;
+
+      &:hover{
+        color: rgb(67, 77, 87);
+      }
+    }
+  }
 }
 
-/*Contact
-
-.contact {
-  height: auto;
-  text-align: center;
-  background-color: rgb(94, 94, 94);
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.contact p {
-  color: white;
-  font-size: 16px;
-}
-
-.email-link {
-  color: white;
-  font-size: 16px !important;
-}
-
-.contact a {
-  font-size: 36px;
+@keyframes pulse {
+  from {
+    opacity: 0;
+    transform: scale3d(0.95, 0.95, 0.95);
+  }
+  10% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
 }
