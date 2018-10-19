@@ -63,9 +63,7 @@ html, body{
     flex-flow: row wrap;
     justify-content: center;
     position: fixed;
-    top: 100px;
     z-index: 1050;
-    margin: auto;
     animation: pulse;
     animation-duration: 0.8s;
 
@@ -310,6 +308,13 @@ html, body{
 
 .portfolio{
   background-color: #303d4f;
+  margin-top: -1px;
+
+  @media screen and (min-width: 568px){
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
 
   @media screen and (min-width: 824px){
     display: none;
@@ -318,6 +323,10 @@ html, body{
   .project{
     display: flex;
     position: relative;
+
+    @media screen and (min-width: 568px){
+      width: 50%;
+    }
 
     .image{
       width: 100%;
@@ -353,8 +362,12 @@ html, body{
         font-size: 16px;
       }
 
+      @media screen and (min-width: 568px){
+        font-size: 12px;
+      }
+
       @media screen and (min-width: 640px){
-        font-size: 24px;
+        font-size: 14px;
       }
     }
   }
